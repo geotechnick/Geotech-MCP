@@ -64,8 +64,8 @@ ws1[f'A{row}'] = 'SOIL PROPERTIES'
 ws1[f'A{row}'].font = bold_font
 row += 1
 ws1[f'A{row}'] = 'Unit Weight (γ):'
-ws1[f'B{row}'] = 18.5
-ws1[f'C{row}'] = 'kN/m³'
+ws1[f'B{row}'] = 115
+ws1[f'C{row}'] = 'pcf'
 ws1[f'B{row}'].fill = input_fill
 row += 1
 ws1[f'A{row}'] = 'Effective Friction Angle (φ):'
@@ -75,7 +75,7 @@ ws1[f'B{row}'].fill = input_fill
 row += 1
 ws1[f'A{row}'] = 'Cohesion (c):'
 ws1[f'B{row}'] = 0
-ws1[f'C{row}'] = 'kPa'
+ws1[f'C{row}'] = 'psf'
 ws1[f'B{row}'].fill = input_fill
 
 row += 2
@@ -84,18 +84,18 @@ ws1[f'A{row}'] = 'FOUNDATION PROPERTIES'
 ws1[f'A{row}'].font = bold_font
 row += 1
 ws1[f'A{row}'] = 'Width (B):'
-ws1[f'B{row}'] = 2.0
-ws1[f'C{row}'] = 'm'
+ws1[f'B{row}'] = 6.5
+ws1[f'C{row}'] = 'ft'
 ws1[f'B{row}'].fill = input_fill
 row += 1
 ws1[f'A{row}'] = 'Length (L):'
-ws1[f'B{row}'] = 3.0
-ws1[f'C{row}'] = 'm'
+ws1[f'B{row}'] = 10.0
+ws1[f'C{row}'] = 'ft'
 ws1[f'B{row}'].fill = input_fill
 row += 1
 ws1[f'A{row}'] = 'Depth of Foundation (Df):'
-ws1[f'B{row}'] = 1.5
-ws1[f'C{row}'] = 'm'
+ws1[f'B{row}'] = 5.0
+ws1[f'C{row}'] = 'ft'
 ws1[f'B{row}'].fill = input_fill
 
 row += 2
@@ -104,18 +104,18 @@ ws1[f'A{row}'] = 'LOAD PROPERTIES'
 ws1[f'A{row}'].font = bold_font
 row += 1
 ws1[f'A{row}'] = 'Vertical Load (V):'
-ws1[f'B{row}'] = 1000
-ws1[f'C{row}'] = 'kN'
+ws1[f'B{row}'] = 225000
+ws1[f'C{row}'] = 'lbs'
 ws1[f'B{row}'].fill = input_fill
 row += 1
 ws1[f'A{row}'] = 'Horizontal Load (H):'
-ws1[f'B{row}'] = 50
-ws1[f'C{row}'] = 'kN'
+ws1[f'B{row}'] = 11250
+ws1[f'C{row}'] = 'lbs'
 ws1[f'B{row}'].fill = input_fill
 row += 1
 ws1[f'A{row}'] = 'Moment (M):'
-ws1[f'B{row}'] = 75
-ws1[f'C{row}'] = 'kN·m'
+ws1[f'B{row}'] = 55300
+ws1[f'C{row}'] = 'lb·ft'
 ws1[f'B{row}'].fill = input_fill
 
 row += 2
@@ -124,8 +124,8 @@ ws1[f'A{row}'] = 'WATER TABLE'
 ws1[f'A{row}'].font = bold_font
 row += 1
 ws1[f'A{row}'] = 'Depth to Water Table:'
-ws1[f'B{row}'] = 5.0
-ws1[f'C{row}'] = 'm'
+ws1[f'B{row}'] = 16.5
+ws1[f'C{row}'] = 'ft'
 ws1[f'B{row}'].fill = input_fill
 
 # CALCULATIONS SECTION
@@ -199,22 +199,22 @@ ws1[f'A{row}'].fill = result_fill
 row += 1
 ws1[f'A{row}'] = 'Cohesion Term:'
 ws1[f'B{row}'] = '=B15*B27*B31*B35'
-ws1[f'C{row}'] = 'kPa'
+ws1[f'C{row}'] = 'psf'
 ws1[f'B{row}'].fill = calc_fill
 row += 1
 ws1[f'A{row}'] = 'Surcharge Term:'
 ws1[f'B{row}'] = '=(B12*B19)*(B28*B32*B36)'
-ws1[f'C{row}'] = 'kPa'
+ws1[f'C{row}'] = 'psf'
 ws1[f'B{row}'].fill = calc_fill
 row += 1
 ws1[f'A{row}'] = 'Weight Term:'
 ws1[f'B{row}'] = '=0.5*B12*B17*B29*B33*B37'
-ws1[f'C{row}'] = 'kPa'
+ws1[f'C{row}'] = 'psf'
 ws1[f'B{row}'].fill = calc_fill
 row += 1
 ws1[f'A{row}'] = 'qu (Ultimate):'
 ws1[f'B{row}'] = '=B41+B42+B43'
-ws1[f'C{row}'] = 'kPa'
+ws1[f'C{row}'] = 'psf'
 ws1[f'B{row}'].fill = result_fill
 ws1[f'B{row}'].font = bold_font
 
@@ -230,7 +230,7 @@ ws1[f'B{row}'].fill = input_fill
 row += 1
 ws1[f'A{row}'] = 'qa (Allowable):'
 ws1[f'B{row}'] = '=B44/B46'
-ws1[f'C{row}'] = 'kPa'
+ws1[f'C{row}'] = 'psf'
 ws1[f'B{row}'].fill = result_fill
 ws1[f'B{row}'].font = bold_font
 
@@ -241,7 +241,7 @@ ws1[f'A{row}'].font = bold_font
 row += 1
 ws1[f'A{row}'] = 'Applied Pressure:'
 ws1[f'B{row}'] = '=B20/(B17*B18)'
-ws1[f'C{row}'] = 'kPa'
+ws1[f'C{row}'] = 'psf'
 ws1[f'B{row}'].fill = calc_fill
 row += 1
 ws1[f'A{row}'] = 'Safety Factor:'
@@ -299,18 +299,18 @@ ws2[f'B{row}'] = 'Driven Steel H-Pile'
 ws2[f'B{row}'].fill = input_fill
 row += 1
 ws2[f'A{row}'] = 'Pile Diameter/Width (B):'
-ws2[f'B{row}'] = 0.35
-ws2[f'C{row}'] = 'm'
+ws2[f'B{row}'] = 14
+ws2[f'C{row}'] = 'in'
 ws2[f'B{row}'].fill = input_fill
 row += 1
 ws2[f'A{row}'] = 'Pile Length (L):'
-ws2[f'B{row}'] = 15.0
-ws2[f'C{row}'] = 'm'
+ws2[f'B{row}'] = 50
+ws2[f'C{row}'] = 'ft'
 ws2[f'B{row}'].fill = input_fill
 row += 1
 ws2[f'A{row}'] = 'Perimeter (P):'
-ws2[f'B{row}'] = '=PI()*B15'
-ws2[f'C{row}'] = 'm'
+ws2[f'B{row}'] = '=PI()*B15/12'
+ws2[f'C{row}'] = 'ft'
 ws2[f'B{row}'].fill = calc_fill
 
 row += 2
@@ -319,8 +319,8 @@ ws2[f'A{row}'] = 'SOIL PROPERTIES'
 ws2[f'A{row}'].font = bold_font
 row += 1
 ws2[f'A{row}'] = 'Unit Weight (γ):'
-ws2[f'B{row}'] = 18.5
-ws2[f'C{row}'] = 'kN/m³'
+ws2[f'B{row}'] = 115
+ws2[f'C{row}'] = 'pcf'
 ws2[f'B{row}'].fill = input_fill
 row += 1
 ws2[f'A{row}'] = 'Effective Friction Angle (φ):'
@@ -329,13 +329,13 @@ ws2[f'C{row}'] = 'degrees'
 ws2[f'B{row}'].fill = input_fill
 row += 1
 ws2[f'A{row}'] = 'Cohesion (c):'
-ws2[f'B{row}'] = 25
-ws2[f'C{row}'] = 'kPa'
+ws2[f'B{row}'] = 520
+ws2[f'C{row}'] = 'psf'
 ws2[f'B{row}'].fill = input_fill
 row += 1
 ws2[f'A{row}'] = 'SPT N-Value:'
 ws2[f'B{row}'] = 20
-ws2[f'C{row}'] = 'blows/300mm'
+ws2[f'C{row}'] = 'blows/12in'
 ws2[f'B{row}'].fill = input_fill
 
 row += 2
@@ -344,8 +344,8 @@ ws2[f'A{row}'] = 'LOAD PROPERTIES'
 ws2[f'A{row}'].font = bold_font
 row += 1
 ws2[f'A{row}'] = 'Design Load (P):'
-ws2[f'B{row}'] = 500
-ws2[f'C{row}'] = 'kN'
+ws2[f'B{row}'] = 112500
+ws2[f'C{row}'] = 'lbs'
 ws2[f'B{row}'].fill = input_fill
 
 # CALCULATIONS SECTION
@@ -370,12 +370,12 @@ ws2[f'B{row}'].fill = input_fill
 row += 1
 ws2[f'A{row}'] = 'fs (clay) = α * c:'
 ws2[f'B{row}'] = '=B33*B22'
-ws2[f'C{row}'] = 'kPa'
+ws2[f'C{row}'] = 'psf'
 ws2[f'B{row}'].fill = calc_fill
 row += 1
 ws2[f'A{row}'] = 'Qs (clay) = fs * P * L:'
 ws2[f'B{row}'] = '=B34*B17*B16'
-ws2[f'C{row}'] = 'kN'
+ws2[f'C{row}'] = 'lbs'
 ws2[f'B{row}'].fill = calc_fill
 
 row += 2
@@ -389,17 +389,17 @@ ws2[f'B{row}'].fill = calc_fill
 row += 1
 ws2[f'A{row}'] = 'Effective Stress at Mid-depth:'
 ws2[f'B{row}'] = '=B19*B16/2'
-ws2[f'C{row}'] = 'kPa'
+ws2[f'C{row}'] = 'psf'
 ws2[f'B{row}'].fill = calc_fill
 row += 1
 ws2[f'A{row}'] = 'fs (sand) = β * σ_v:'
 ws2[f'B{row}'] = '=B37*B38'
-ws2[f'C{row}'] = 'kPa'
+ws2[f'C{row}'] = 'psf'
 ws2[f'B{row}'].fill = calc_fill
 row += 1
 ws2[f'A{row}'] = 'Qs (sand) = fs * P * L:'
 ws2[f'B{row}'] = '=B39*B17*B16'
-ws2[f'C{row}'] = 'kN'
+ws2[f'C{row}'] = 'lbs'
 ws2[f'B{row}'].fill = calc_fill
 
 row += 2
@@ -414,17 +414,17 @@ ws2[f'B{row}'].fill = calc_fill
 row += 1
 ws2[f'A{row}'] = 'Effective Stress at Tip:'
 ws2[f'B{row}'] = '=B19*B16'
-ws2[f'C{row}'] = 'kPa'
+ws2[f'C{row}'] = 'psf'
 ws2[f'B{row}'].fill = calc_fill
 row += 1
 ws2[f'A{row}'] = 'qp = c*Nc + σ_v*Nq (simplified):'
 ws2[f'B{row}'] = '=B22*9.14+B43*B42'
-ws2[f'C{row}'] = 'kPa (Nc=9.14 for φ=30°)'
+ws2[f'C{row}'] = 'psf (Nc=9.14 for φ=30°)'
 ws2[f'B{row}'].fill = calc_fill
 row += 1
 ws2[f'A{row}'] = 'Qp = qp * Ap:'
-ws2[f'B{row}'] = '=B44*PI()*((B15/2)^2)'
-ws2[f'C{row}'] = 'kN'
+ws2[f'B{row}'] = '=B44*PI()*((B15/12/2)^2)'
+ws2[f'C{row}'] = 'lbs'
 ws2[f'B{row}'].fill = calc_fill
 
 row += 2
@@ -434,7 +434,7 @@ ws2[f'A{row}'].font = bold_font
 row += 1
 ws2[f'A{row}'] = 'Qu = Qs + Qp:'
 ws2[f'B{row}'] = '=MAX(B35,B40)+B45'
-ws2[f'C{row}'] = 'kN (use max of clay or sand method)'
+ws2[f'C{row}'] = 'lbs (use max of clay or sand method)'
 ws2[f'B{row}'].fill = result_fill
 ws2[f'B{row}'].font = bold_font
 
@@ -450,7 +450,7 @@ ws2[f'B{row}'].fill = input_fill
 row += 1
 ws2[f'A{row}'] = 'Qa = Qu / FS:'
 ws2[f'B{row}'] = '=B47/B49'
-ws2[f'C{row}'] = 'kN'
+ws2[f'C{row}'] = 'lbs'
 ws2[f'B{row}'].fill = result_fill
 ws2[f'B{row}'].font = bold_font
 
@@ -461,7 +461,7 @@ ws2[f'A{row}'].font = bold_font
 row += 1
 ws2[f'A{row}'] = 'Applied Load:'
 ws2[f'B{row}'] = '=B25'
-ws2[f'C{row}'] = 'kN'
+ws2[f'C{row}'] = 'lbs'
 ws2[f'B{row}'].fill = calc_fill
 row += 1
 ws2[f'A{row}'] = 'Safety Factor:'
@@ -487,8 +487,8 @@ ws2[f'B{row}'] = 4
 ws2[f'B{row}'].fill = input_fill
 row += 1
 ws2[f'A{row}'] = 'Pile Spacing:'
-ws2[f'B{row}'] = 3.0
-ws2[f'C{row}'] = 'm (recommend 3D min)'
+ws2[f'B{row}'] = 10.0
+ws2[f'C{row}'] = 'ft (recommend 3D min)'
 ws2[f'B{row}'].fill = input_fill
 row += 1
 ws2[f'A{row}'] = 'Group Efficiency:'
@@ -498,7 +498,7 @@ ws2[f'B{row}'].fill = input_fill
 row += 1
 ws2[f'A{row}'] = 'Group Capacity:'
 ws2[f'B{row}'] = '=B57*B50*B59'
-ws2[f'C{row}'] = 'kN'
+ws2[f'C{row}'] = 'lbs'
 ws2[f'B{row}'].fill = result_fill
 ws2[f'B{row}'].font = bold_font
 
@@ -515,9 +515,10 @@ wb.save('Foundation_Pile_Design_FHWA.xlsx')
 
 print("Excel file 'Foundation_Pile_Design_FHWA.xlsx' created successfully!")
 print("Features included:")
-print("- Shallow Foundation Bearing Capacity (Terzaghi/Meyerhof/Vesić methods)")
+print("- Shallow Foundation Bearing Capacity (Terzaghi/Meyerhof/Vesic methods)")
 print("- Pile Design with Skin Friction and End Bearing")
 print("- FHWA recommended safety factors")
 print("- Clear input/output sections with color coding")
 print("- Step-by-step calculations with formulas")
 print("- Pile group analysis")
+print("- All units converted to English (psf, pcf, lbs, ft, in)")
